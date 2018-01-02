@@ -1,13 +1,11 @@
 from abc import ABC, abstractmethod
+import numpy as np
 
 
 class Layer(ABC):
-
-    # for update temporary memory
-    m = {}
-    u_type = 'adam'
-    is_output = False
+    dropout = 1.0
     is_input = False
+    is_output = False
     is_hidden = False
 
     @abstractmethod
@@ -16,10 +14,6 @@ class Layer(ABC):
 
     @abstractmethod
     def backward(self, dy):
-        pass
-
-    @abstractmethod
-    def output_size(self):
         pass
 
     @abstractmethod
