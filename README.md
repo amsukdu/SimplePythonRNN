@@ -27,7 +27,7 @@ rnn = RNN(
         {'type': 'lstm', 'hidden_size': 256},
         {'type': 'lstm', 'hidden_size': 256},
         {'type': 'lstm', 'hidden_size': 256},
-        # {'type': 'lstm', 'hidden_size': 256, 'dropout': 0.5, 'u_type': 'adagrad'},
+        # {'type': 'lstm', 'hidden_size': vocab_size, 'dropout': 0.5, 'bi': True, 'u_type': 'adagrad'},
     ],
     vocab_size, learning_rate, bi=False)
 
@@ -53,6 +53,7 @@ Generated string over 65000 iterations.
 | hidden_size | hiddden dimension size  |
 | lr | learning rate |
 | u_type | 'adam', 'adagrad' |
+| bi | Bidirectional. True, False |
 
 
 ## License

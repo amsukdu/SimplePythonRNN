@@ -15,11 +15,10 @@ rnn = RNN(
         {'type': 'lstm', 'hidden_size': 256},
         {'type': 'lstm', 'hidden_size': 256},
         {'type': 'lstm', 'hidden_size': 256},
-        # {'type': 'lstm', 'hidden_size': 256, 'dropout': 0.5, 'u_type': 'adagrad'},
+        # {'type': 'lstm', 'hidden_size': vocab_size, 'dropout': 0.5, 'bi': True, 'u_type': 'adagrad'}
     ],
-    vocab_size, learning_rate, bi=False)
+    vocab_size, learning_rate)
 
-print('bi: {}'.format(rnn.bi))
 print(rnn.archi)
 print('with seq_length {}'.format(seq_length))
 
@@ -55,7 +54,7 @@ while True:
     y[:, targets] = 1
 
     if n % 1000 == 0:
-        sample_ix = sample(inputs[0], 500)
+        sample_ix = sample(inputs[0], 300)
         txt = ''.join(ix_to_char[ix] for ix in sample_ix)
         print('----\n %s \n----' % (txt,))
 
