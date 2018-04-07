@@ -15,7 +15,6 @@ numpy (+ mkl for intel processors. recommend [anaconda](https://www.continuum.io
 
 
 ## Example
-AND gate and CIFAR-10 examples are included.
 
 ```python
 
